@@ -11,6 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
+import { UserService } from './user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 		AngularFireAuthModule,
 		NgbModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
