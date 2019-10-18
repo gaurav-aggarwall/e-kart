@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -9,12 +10,12 @@ import { UserService } from './user.service';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnDestroy{
-	navigationSubscription: any;
+	navigationSubscription: Subscription;
 
 	constructor(private auth: AuthService, private userService: UserService, router: Router) {
 		this.navigationSubscription = this.auth.user$.subscribe(user => {
 			if (user) {
-				this.userService.save(user)
+				this.userService.save(user);
 				
 				let returnUrl = localStorage.getItem('returnUrl');
 				router.navigateByUrl(returnUrl);
