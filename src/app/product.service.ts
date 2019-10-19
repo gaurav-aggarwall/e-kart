@@ -21,4 +21,12 @@ export class ProductService {
 	getAll() {
 		return this.db.list(this.productUrl);
 	}
+
+	update(productId, product) {
+		return this.db.object(`${this.productUrl}/${productId}`).update(product);
+	}
+
+	delete(productId) {
+		return this.db.object(`${this.productUrl}/${productId}`).remove();
+	}
 }
