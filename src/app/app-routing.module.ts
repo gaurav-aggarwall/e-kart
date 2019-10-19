@@ -10,9 +10,11 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 import { AuthGuardService } from './auth-guard.service';
-import { AdminAuthGuardService } from './admin-auth-guard.service';
+
+import { AdminModule } from './admin/admin.module';
 
 const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -22,23 +24,16 @@ const routes: Routes = [
     { path: 'check-out', component: CheckoutComponent, canActivate: [AuthGuardService]},
     { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuardService]},
     { path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGuardService]},
-    { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
-    { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
 ];
 
 @NgModule({
-	declarations: [
-		HomeComponent,
-		LoginComponent,
-		ProductsComponent,
-		ShoppingCartComponent,
-		CheckoutComponent,
-		OrderSuccessComponent,
-		MyOrdersComponent,
-		AdminProductsComponent,
-		AdminOrdersComponent
-	],
-	imports: [RouterModule.forRoot(routes)],
-  	exports: [RouterModule]
+	imports: [
+		RouterModule.forRoot(routes),
+		AdminModule
+	],	
+  	exports: [
+		RouterModule,
+		AdminModule
+	]
 })
 export class AppRoutingModule { }
