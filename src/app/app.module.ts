@@ -25,6 +25,8 @@ import { AuthGuardService } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoriesService } from './categories.service';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { CategoriesService } from './categories.service';
     CheckoutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
+    ProductFilterComponent,
+    // ProductCardComponent,
   ],
   imports: [
 		BrowserModule,

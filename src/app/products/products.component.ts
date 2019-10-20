@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 
 import { Product } from '../models/product';
 import { ProductService } from './../product.service';
-import { CategoriesService } from './../categories.service';
 
 @Component({
 	selector: 'app-products',
@@ -14,10 +12,9 @@ import { CategoriesService } from './../categories.service';
 export class ProductsComponent {
 	products: Product[] = [];
 	filteredProducts: Product[] = [];
-	categories$: Observable<any>;
 	category: string;
 	
-	constructor(productService: ProductService, categoriesService: CategoriesService, route: ActivatedRoute) {
+	constructor(productService: ProductService, route: ActivatedRoute) {
 		productService.getAll().subscribe(products => {
 			this.products = products;
 
@@ -31,7 +28,5 @@ export class ProductsComponent {
 				}
 			});
 		});
-
-		this.categories$ = categoriesService.getAll();
 	}
 }

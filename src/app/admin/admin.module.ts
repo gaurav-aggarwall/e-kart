@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
-// import { DataTableModule } from 'angular5-data-table';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 import { ProductFormComponent } from './product-form/product-form.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
@@ -14,14 +14,17 @@ import { AdminRoutesModule } from './admin-routes.module';
 	declarations: [
 		AdminOrdersComponent,
 		AdminProductsComponent,
-		ProductFormComponent
+		ProductFormComponent,
+		ProductCardComponent
 	],
 	imports: [
 		FormsModule,
 		CommonModule,
 		CustomFormsModule,
-		// DataTableModule.forRoot(),
 		AdminRoutesModule
+	],
+	exports: [
+		ProductCardComponent
 	]
 })
 export class AdminModule { }
