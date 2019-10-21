@@ -19,14 +19,14 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoriesService } from './categories.service';
-import { ProductFilterComponent } from './products/product-filter/product-filter.component';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     CheckoutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    ProductFilterComponent,
-    // ProductCardComponent,
+    ProductFilterComponent
   ],
   imports: [
 		BrowserModule,
@@ -57,7 +56,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     UserService,
     AdminAuthGuardService,
     CategoriesService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
