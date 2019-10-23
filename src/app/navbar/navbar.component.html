@@ -7,7 +7,9 @@
 	<div class="collapse navbar-collapse" id="navLinks">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
+				<a class="nav-link" routerLink="/shopping-cart">
+					Shopping Cart <span class="badge badge-warning badge-pill">{{shoppingCartItemCount}}</span>
+				</a>
 			</li>
 			<li *ngIf="appUser; else notLoggedIn" ngbDropdown class="nav-item dropdown">
 				<a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{appUser.name}}</a>
