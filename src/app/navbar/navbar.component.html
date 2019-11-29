@@ -8,7 +8,10 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
 				<a class="nav-link" routerLink="/shopping-cart">
-					Shopping Cart <span class="badge badge-warning badge-pill">{{shoppingCartItemCount}}</span>
+					Shopping Cart 
+					<span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
+						{{cart.totalItemsCount}}
+					</span>
 				</a>
 			</li>
 			<li *ngIf="appUser; else notLoggedIn" ngbDropdown class="nav-item dropdown">
