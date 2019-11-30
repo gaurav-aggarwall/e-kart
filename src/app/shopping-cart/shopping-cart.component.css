@@ -1,0 +1,30 @@
+.cart-container {
+    width: 90%;
+    margin: auto;
+}
+
+.quantity-col {
+    width: 230px;
+}
+
+.price-col {
+    width: 200px;
+}
+
+.thumbnail {
+    margin-right: -50px;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.cancel-button {
+    margin-bottom: 20px;
+}
+
+/* @media screen and (max-width: 600px) {
+    .thumbnail {
+        margin-right: 0px;
+    }
+} */
