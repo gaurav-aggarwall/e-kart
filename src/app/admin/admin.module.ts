@@ -17,7 +17,7 @@ import { AdminRoutesModule } from './admin-routes.module';
 		AdminProductsComponent,
 		ProductFormComponent,
 		ProductCardComponent,
-		ProductQuantityComponent
+		ProductQuantityComponent,
 	],
 	imports: [
 		FormsModule,
@@ -26,7 +26,8 @@ import { AdminRoutesModule } from './admin-routes.module';
 		AdminRoutesModule
 	],
 	exports: [
-		ProductCardComponent
+		ProductCardComponent,
+		ProductQuantityComponent
 	]
 })
 export class AdminModule { }
