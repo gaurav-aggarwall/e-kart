@@ -1,4 +1,3 @@
-import { ProductService } from './product.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,6 +26,8 @@ import { UserService } from './user.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoriesService } from './categories.service';
 import { ShoppingCartService } from './shopping-cart.service';
+import { OrderService } from './order.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ShoppingCartService } from './shopping-cart.service';
     AdminAuthGuardService,
     CategoriesService,
     ProductService,
-    ShoppingCartService
+    ShoppingCartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

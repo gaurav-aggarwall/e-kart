@@ -26,6 +26,7 @@ import { AdminRoutesModule } from './admin-routes.module';
 		AdminRoutesModule
 	],
 	exports: [
+		FormsModule,
 		ProductCardComponent,
 		ProductQuantityComponent
 	]
