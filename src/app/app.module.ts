@@ -28,6 +28,8 @@ import { CategoriesService } from './categories.service';
 import { ShoppingCartService } from './shopping-cart.service';
 import { OrderService } from './order.service';
 import { ProductService } from './product.service';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ProductService } from './product.service';
     CheckoutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent
   ],
   imports: [
 		BrowserModule,
