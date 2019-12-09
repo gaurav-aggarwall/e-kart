@@ -1,34 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation';
-import { ProductCardComponent } from '../product-card/product-card.component';
-import { ProductQuantityComponent } from './../product-quantity/product-quantity.component';
-
-import { ProductFormComponent } from './product-form/product-form.component';
-import { AdminProductsComponent } from './admin-products/admin-products.component';
-import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { SharedModule } from 'shared/shared.module';
 
 import { AdminRoutesModule } from './admin-routes.module';
+import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { AdminAuthGuardService } from './services/admin-auth-guard.service';
 
 @NgModule({
 	declarations: [
 		AdminOrdersComponent,
 		AdminProductsComponent,
 		ProductFormComponent,
-		ProductCardComponent,
-		ProductQuantityComponent,
 	],
 	imports: [
-		FormsModule,
-		CommonModule,
-		CustomFormsModule,
-		AdminRoutesModule
+		AdminRoutesModule,
+		SharedModule
 	],
-	exports: [
-		FormsModule,
-		ProductCardComponent,
-		ProductQuantityComponent
+	providers: [
+		AdminAuthGuardService
 	]
 })
 export class AdminModule { }

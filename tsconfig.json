@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -21,7 +21,10 @@
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
-     ]
+      ],
+      "shared/*": [
+        "app/shared/*"
+      ] 
     }
   },
   "angularCompilerOptions": {

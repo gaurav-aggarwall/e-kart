@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from 'shared/services/auth-guard.service';
 
-
-import { ProductFormComponent } from './product-form/product-form.component';
-import { AdminProductsComponent } from './admin-products/admin-products.component';
-import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
-
-
-import { AuthGuardService } from './../auth-guard.service';
-import { AdminAuthGuardService } from '../admin-auth-guard.service';
+import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { AdminAuthGuardService } from './services/admin-auth-guard.service';
 
 const adminRoutes: Routes = [
     { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
