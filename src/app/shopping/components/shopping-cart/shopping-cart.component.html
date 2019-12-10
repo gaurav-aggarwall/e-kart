@@ -30,7 +30,12 @@
                 <th class="text-right">Total</th>
                 <th class="text-right">{{ cart.totalPrice | currency:'USD' }}</th>
             </tr>
+            <tr>
+                <th colspan="4">
+                    <a *ngIf="cart.items.length" class="btn btn-primary" routerLink="/check-out">Check Out</a>
+                </th>
+            </tr>
         </tfoot>
     </table>
-    <a *ngIf="cart.items.length" class="btn btn-primary" routerLink="/check-out">Check Out</a>
+
 </div>

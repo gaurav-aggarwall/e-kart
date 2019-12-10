@@ -1,3 +1,7 @@
 .dropdown-toggle {
     cursor: pointer;
 }
+
+.fa-leaf {
+    margin-right: 1rem;
+}
